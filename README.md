@@ -1,7 +1,8 @@
 gtfs-internationalization
 =======
 
-*Introduction*
+Introduction
+------------
 
 GTFS offers a powerful framework for defining transit service data feeds. However, at its core is a stop-centric model of transport services which is not appropriate for many of the world's transit networks, particularly those in developing cities. 
 
@@ -13,7 +14,8 @@ Based on field data collection efforts in Mexico City and Manila -- both cities 
 
 Additionally we recommend changes that improve the way journey times and headway are encoded, as well as localization of route types.
 
-*Proposed Changes*
+Proposed Changes
+----------------
 
 ### Interpolating Stops
 
@@ -22,9 +24,9 @@ We recommend the inclusions of a "interpolate_stops" flag in the trips.txt that 
 The implementation details aren't well defined at this stage, however, in our prototyping to-date we have used the following values:
 
 **interpolate_stops**
--1   Do not interpolate stops
-0     Allow boarding/alighting at any point along the trip shape (exact implementation will be driven by each GTFS consumer)
->0   Allow boarding/alighting at every x meters (exact placement is "best effort" as determined by GTFS consumer)
+* -1: Do not interpolate stops
+*  0: Allow boarding/alighting at any point along the trip shape (exact implementation will be driven by each GTFS consumer)
+* >0: Allow boarding/alighting at every x meters (exact placement is "best effort" as determined by GTFS consumer)
 
 When GTFS is consumed by routing engines additional stopping points can be placed along the trip shape at or close to the specified frequency. These points would be treated as non-timepoint stops with journey times interpolated based on distance and travel time from the nearest bracketing time points. As many time point stops as desired can be specified, however, each route/trip variant requires a minimum of two (an origin and destination). 
 
@@ -47,11 +49,11 @@ To overcome this limitation we recommend the following extension:
 
 Create a "route_types.txt" definition that overrides values specified int the "route_type" column in the "routes.txt" file. The extension file would include rows with the following columns:
 
-route_type_id: the number used in the routes.txt route_type column to specify a localized type
-gtfs_rotue_type: the closest matching route type from the standard GTFS types definition
-hvt_route_type: the closest matching HVT type from the proposed HVT types extension, with the option to expand the HVT type categories with a centralized registry
-localized_name: the route type name defining this mode of transport using the local language and character set
-localized_description: an optional brief description of the mode in the local language
+* route_type_id: the number used in the routes.txt route_type column to specify a localized type
+* gtfs_rotue_type: the closest matching route type from the standard GTFS types definition
+* hvt_route_type: the closest matching HVT type from the proposed HVT types extension, with the option to expand the HVT type categories with a centralized registry
+* localized_name: the route type name defining this mode of transport using the local language and character set
+* localized_description: an optional brief description of the mode in the local language
 
 
 ### Reducing Time Precision
