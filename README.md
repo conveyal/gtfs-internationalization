@@ -23,7 +23,7 @@ We recommend the inclusions of a "interpolate_stops" flag in the trips.txt that 
 
 The implementation details aren't well defined at this stage, however, in our prototyping to-date we have used the following values:
 
-**interpolate_stops**
+*interpolate_stops*
 * -1: Do not interpolate stops
 *  0: Allow boarding/alighting at any point along the trip shape (exact implementation will be driven by each GTFS consumer)
 * >0: Allow boarding/alighting at every x meters (exact placement is "best effort" as determined by GTFS consumer)
@@ -49,6 +49,7 @@ To overcome this limitation we recommend the following extension:
 
 Create a "route_types.txt" definition that overrides values specified int the "route_type" column in the "routes.txt" file. The extension file would include rows with the following columns:
 
+*route_types.txt*
 * route_type_id: the number used in the routes.txt route_type column to specify a localized type
 * gtfs_rotue_type: the closest matching route type from the standard GTFS types definition
 * hvt_route_type: the closest matching HVT type from the proposed HVT types extension, with the option to expand the HVT type categories with a centralized registry
