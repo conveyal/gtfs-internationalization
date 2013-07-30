@@ -41,7 +41,7 @@ Finally, our recommended approach avoids an important semantics problem: we thin
 
 ### Localizing Route Types
 
-The current GTFS route type framework presents challenges for international adoption. As currently defined GTFS relies on the USDOT NTD classification schema and includes a very limited set of route types. Modifications have been made to include a more expansive set of types, referred to as a "hierarchical vehicle type" definition, however,  this change is both poorly documented and inadequate as it contains a North American and European-centric view of available modes.
+The current GTFS route type framework presents challenges for international adoption. As defined GTFS relies on the USDOT NTD classification schema and includes a very limited set of route types. Modifications have been made to include a more expansive set of types, referred to as a "hierarchical vehicle type" (HVT) definition, however,  this change is both poorly documented and inadequate as it contains a North American and European-centric view of available modes.
 
 Further, the specification of modes does not allow for use of localized names. This is important both for bridging language barriers and allowing the use of local nomenclature to define service types (as different from operators or brands). Current recommendations for localization, not yet incorporated into the GTFS spec, still do not allow feed producers to extend route types or specify localized names. 
 
