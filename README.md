@@ -1,6 +1,7 @@
 gtfs-internationalization
 =======
 
+
 Introduction
 ------------
 
@@ -60,3 +61,11 @@ Create a "route_types.txt" definition that overrides values specified int the "r
 ### Reducing Time Precision
 
 **TBD**
+
+
+Examples
+--------
+
+The above proposals were developed as part of World Bank-supported field data collection projects in Manila and Mexico City. These projects supported the creation of GTFS feeds matching the above specification, as well as modifications to existing open source GTFS tools (GTFS Editor and OpenTripPlanner) that produce and consume GTFS in the modified format. While the proposal details are refined we will release customized version of OpenTripPlanner and and the public feeds as examples. Once the GTFS modifications are finalized we will incorporate these changes into the master branches of the respective tools and release official feeds in the extended format.
+
+
